@@ -37,11 +37,13 @@ function Direction(request, body) {
     {
         //call Back Function
         var data = JSON.parse(body);
+        console.log(data);
         db.updateDownLoad(data.message, function(err, info){
             if(err) {
                 console.log(err);
                 return;
             }
+            console.log(info);
             lib.downloadAudio(info.direction, info.fileName, info.url);
         });
         return "";
