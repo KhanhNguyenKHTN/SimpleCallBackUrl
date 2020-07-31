@@ -45,15 +45,9 @@ function Direction(request, response, body) {
         console.log('Request url:', request.url);
         switch (request.url) {
              case '/': //'./index.html'
-                
-                fs.readFile(split[split.length - 1], function (err, html) {
-                    if (err) {
-                        throw err; 
-                    }       
-                    response.writeHeader(200, {"Content-Type": "text/html"});  
-                    response.write(html);  
-                    response.end(); 
-                });              
+                response.writeHead(200, { 'Content-Type': 'text/plain' });
+                response.write('nothing');
+                response.end();            
                 break;
             case '/home':
                 response.writeHead(200, { 'Content-Type': 'text/plain' });
