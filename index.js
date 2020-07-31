@@ -18,7 +18,7 @@ http.createServer(function (request, response) {
           response.write('Hello World!');
           response.end();
       }else {
-          fs.readFile('./index.html', function (err, html) {
+          fs.readFile(res, function (err, html) {
               if (err) {
                   throw err; 
               }       
@@ -52,11 +52,12 @@ function Direction(request, body) {
         //Redirect function
         switch (request.url) {
             case '/':               
-                break;
+                return './index.html';
             case '/home':
                 return "zz";
             default:
-                break;
+                console.log(request.url);
+                return request.url;
         }
     }
 }
