@@ -29,7 +29,7 @@ http.createServer(function (request, response) {
       }
     });
    
-}).listen(8080);
+}).listen(80);
 console.log("Server start in port 8080");
 
 function Direction(request, body) {
