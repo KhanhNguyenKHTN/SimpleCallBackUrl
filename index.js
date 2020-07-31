@@ -59,7 +59,7 @@ function Direction(request, response, body) {
                     var temp = request.url.replace("/download", "");
                     ReturnDownLoadMp3File(temp, response);
 
-                }else
+                }else if (split[1] == 'Data')
                 {
                     if(request.headers.range){
                         ReturnStreamMp3(request, response);
