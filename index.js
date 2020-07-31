@@ -28,12 +28,15 @@ function Direction(request, response, body) {
         db.updateDownLoad(data.message, function(err, info){
             if(err) {
                 console.log(err);
-                return;
+                response.writeHead(200, { 'Content-Type': 'text/plain' });
+                response.write(err);
+                response.end();
             }
-            console.log(info);
             lib.downloadAudio(info.direction, info.fileName, info.url);
+            response.writeHead(200, { 'Content-Type': 'text/plain' });
+            response.write('Done');
+            response.end();
         });
-        return "";
     }
     else if (request.method == 'GET'){
         //Redirect function
