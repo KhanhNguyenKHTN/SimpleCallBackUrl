@@ -72,7 +72,7 @@ function Direction(request, response, body) {
     }
 }
 function ReturnStreamMp3(request, response){
-    var path = '.' + request.url.toLowerCase();
+    var path = '.' + request.url;
     var filestream = fs.createReadStream(path);
     var range = request.headers.range.replace("bytes=", "").split('-');
     
@@ -107,7 +107,7 @@ function ReturnStreamMp3(request, response){
 }
 
 function ReturnDownLoadMp3File(res, response){
-    var path = '.' +res.toLowerCase();
+    var path = '.' +res;
     var filestream = fs.createReadStream(path);
     filestream.on('open', function() {
     var stats = fs.statSync(path);
