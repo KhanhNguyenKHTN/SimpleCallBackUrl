@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/KhanhNguyenKHTN/SimpleCallBackUrl/issues"
   },
-  "homepage": "https://github.com/KhanhNguyenKHTN/SimpleCallBackUrl#readme"
+  "homepage": "https://github.com/KhanhNguyenKHTN/SimpleCallBackUrl#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
